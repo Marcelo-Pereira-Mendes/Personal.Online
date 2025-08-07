@@ -1,0 +1,360 @@
+/* 🌈 Paleta de Cores */
+:root {
+  --primary-color: #0a0a0a;
+  --primary-dark: #121212;
+  --secondary-color: #00ffff;
+  --accent-color: #ff00ff;
+  --accent-dark: #cc00cc;
+  --white: #ffffff;
+  --gray-bg: #1f1f1f;
+  --text-color: #e0e0e0;
+  --shadow-cyan: 0 6px 20px rgba(0, 255, 255, 0.25);
+  --shadow-magenta: 0 6px 20px rgba(255, 0, 255, 0.25);
+  --font: 'Poppins', sans-serif;
+}
+
+/* 🔤 Tipografia Base */
+body {
+  font-family: var(--font);
+  background-color: var(--primary-dark);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+p, li {
+  font-size: 1.125rem;
+  color: var(--text-color);
+}
+
+/* 🌐 Navbar */
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding-top: 25px;
+  padding-bottom: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--secondary-color) !important;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+  transition: text-shadow 0.3s ease;
+}
+
+.navbar-brand:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+/* 🌟 Hero Section */
+#inicio {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+#inicio h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow:
+    2px 2px 6px rgba(0, 255, 255, 0.7),
+    0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+#inicio p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+#inicio .destaque-app {
+  color: white;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  text-shadow:
+    0.8px 0.8px 0 #000,
+    1.5px 1.5px 0 #333,
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: pulsarSombra 4s ease-in-out infinite;
+  max-width: 800px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+@keyframes pulsarSombra {
+  0%, 100% {
+    text-shadow:
+      0.8px 0.8px 0 #000,
+      1.5px 1.5px 0 #333,
+      2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow:
+      1px 1px 0 #000,
+      2px 2px 0 #333,
+      2.5px 2.5px 6px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* 🟦 Botão Primário */
+.btn-primary {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  border: none;
+  font-weight: 700;
+  color: var(--primary-dark);
+  transition: all 0.3s ease-in-out;
+  box-shadow: var(--shadow-cyan);
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(255, 0, 255, 0.6);
+}
+
+/* 🧩 Consultoria Cards */
+#consultoria .card {
+  background: var(--gray-bg);
+  border-radius: 1rem;
+  border: none;
+  box-shadow: var(--shadow-cyan);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#consultoria .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(0, 255, 255, 0.5);
+}
+
+#consultoria .card-img-top {
+  max-height: 500px;
+  object-fit: contain;
+  padding: 1.5rem;
+}
+
+/* 💳 Cards de Planos */
+.planos-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 992px) {
+  .planos-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .planos-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.plano-card {
+  background: var(--gray-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-cyan);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.plano-card h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.plano-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.plano-card ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Valor acima do botão */
+.valor-plano {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Botão padrão para todos */
+.plano-card a {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--primary-dark);
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
+  transition: all 0.3s ease;
+  align-self: center;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+}
+
+.plano-card a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 0, 255, 0.6);
+}
+
+/* Destaque para o mais vendido */
+.plano-card.destaque {
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--white);
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Títulos e subtítulos das seções */
+.section-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+  margin-top: 3rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 💬 Cards de Depoimentos */
+.depoimentos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.depoimento-card {
+  background: var(--gray-bg);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-style: italic;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-magenta);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.depoimento-card p {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.depoimento-card h4 {
+  color: var(--secondary-color);
+  font-style: normal;
+  margin-top: 0;
+  text-align: right;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 0, 255, 0.4);
+}
+
+/* 📱 Responsividade geral */
+@media (max-width: 768px) {
+  #inicio h1 {
+    font-size: 2rem;
+  }
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.8rem 1.4rem;
+  }
+  .planos-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  #inicio p {
+    font-size: 1rem;
+  }
+}
+
+/* 🌸 Texto Neon Rosa Impactante e Responsivo */
+.text-neon-rosa {
+  color: #ff00cc; /* rosa neon vibrante */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  text-shadow:
+    0 0 5px #ff00cc,
+    0 0 10px #ff00cc,
+    0 0 20px #ff00cc,
+    0 0 30px #ff66cc,
+    0 0 40px #ff66cc,
+    0 0 50px #ff66cc,
+    0 0 60px #ff33ff;
+  transition: color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+/* Ajuste responsivo para mobile */
+@media (max-width: 768px) {
+  .text-neon-rosa {
+    font-size: 1.8rem;
+    letter-spacing: 1.5px;
+    text-shadow:
+      0 0 3px #ff00cc,
+      0 0 7px #ff00cc,
+      0 0 15px #ff00cc,
+      0 0 20px #ff66cc,
+      0 0 25px #ff66cc;
+  }
+}
